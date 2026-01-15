@@ -9,20 +9,36 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+
+  
   const companies = [
     {
-      name: "TechVenture",
-      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=80&fit=crop"
+      name: "Stretford Professional Services",
+      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=80&fit=crop&auto=format"
     },
     {
-      name: "InnovateCo",
-      logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=80&fit=crop"
+      name: "Oui Advisory Capital",
+      logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=80&fit=crop&auto=format"
     },
     {
-      name: "FutureScale",
-      logo: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=200&h=80&fit=crop"
+      name: "Gigawatt Energy Limited",
+      logo: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Klump Technologies",
+      logo: "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Esca Technologies",
+      logo: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Probitas Partners LLP",
+      logo: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=200&h=80&fit=crop&auto=format"
     }
   ];
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
