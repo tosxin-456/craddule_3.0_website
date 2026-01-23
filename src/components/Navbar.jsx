@@ -73,6 +73,13 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <button
+          onClick={() =>
+            window.open(
+              "https://console.app.craddule.com",
+              "_blank",
+              "noopener,noreferrer"
+            )
+          }
           className={`hidden md:block px-6 py-2 rounded-lg text-sm font-semibold transition-all
             ${
               isScrolled
@@ -124,7 +131,16 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          <button className="w-full mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg text-base font-semibold hover:bg-blue-700 shadow-sm">
+          <button
+            onClick={() =>
+              window.open(
+                "https://console.app.craddule.com",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+            className="w-full mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg text-base font-semibold hover:bg-blue-700 shadow-sm"
+          >
             Get Started
           </button>
         </div>

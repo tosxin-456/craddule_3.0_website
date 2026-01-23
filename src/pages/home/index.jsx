@@ -2,108 +2,183 @@ import {
   ArrowRight,
   CheckCircle,
   Shield,
-  FileCheck,
+  DollarSign,
   Target,
   Zap,
-  Star
+  TrendingUp,
+  Award
 } from "lucide-react";
 
 export default function Home() {
-
-  
-  const companies = [
-    {
-      name: "Stretford Professional Services",
-      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=80&fit=crop&auto=format"
-    },
-    {
-      name: "Oui Advisory Capital",
-      logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=80&fit=crop&auto=format"
-    },
-    {
-      name: "Gigawatt Energy Limited",
-      logo: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=200&h=80&fit=crop&auto=format"
-    },
-    {
-      name: "Klump Technologies",
-      logo: "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=200&h=80&fit=crop&auto=format"
-    },
-    {
-      name: "Esca Technologies",
-      logo: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=200&h=80&fit=crop&auto=format"
-    },
-    {
-      name: "Probitas Partners LLP",
-      logo: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=200&h=80&fit=crop&auto=format"
-    }
-  ];
-
-
+const companies = [
+  {
+    name: "Stretford Professional Services",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+  },
+  {
+    name: "Oui Advisory Capital",
+    logo: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=80&fit=crop&auto=format"
+  },
+  {
+    name: "Gigawatt Energy Limited",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+  },
+  {
+    name: "Klump Technologies",
+    logo: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=200&h=80&fit=crop&auto=format"
+  },
+  {
+    name: "Esca Technologies",
+    logo: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=200&h=80&fit=crop&auto=format"
+  },
+  {
+    name: "Probitas Partners LLP",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+  }
+];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop"
-            alt="Workspace"
+            src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1920&h=1080&fit=crop"
+            alt="Funding"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-800/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-black/90 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full mb-6 text-sm backdrop-blur-sm">
-              <Zap className="w-4 h-4" />
-              Regulatory clarity for founders
+              <DollarSign className="w-4 h-4" />
+              Funding + Compliance in one
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Know your regulatory requirements
-              <span className="block text-yellow-400">before you scale</span>
+              Get funded
+              <span className="block text-yellow-400">stay compliant</span>
             </h1>
 
-            <p className="text-xl text-blue-100 mb-8">
-              Get the exact licenses, registrations, and approvals your business
-              needs.
+            <p className="text-xl text-green-100 mb-8">
+              Craddule helps fund your business idea and ensures you meet every
+              regulatory requirement—so you can scale without surprises.
             </p>
 
-            <button className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold flex items-center gap-3 hover:scale-105 transition shadow-xl">
-              Get my regulatory checklist
+            <button
+              onClick={() =>
+                window.open(
+                  "https://console.app.craddule.com",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+              className="bg-white text-green-900 px-8 py-4 rounded-xl font-semibold flex items-center gap-3 hover:scale-105 transition shadow-xl"
+            >
+              Get started
               <ArrowRight />
             </button>
 
-            <div className="flex gap-8 mt-8 text-blue-100">
+            <div className="flex gap-8 mt-8 text-green-100">
               <span className="flex items-center gap-2">
                 <CheckCircle className="text-yellow-400" />
-                Free
-              </span>
-              <span className="flex items-center gap-2">
-                <CheckCircle className="text-yellow-400" />
-                Compliance-first
+                Capital + compliance
               </span>
             </div>
           </div>
 
           <div className="hidden md:block relative">
             <img
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800"
-              alt="Documents"
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800"
+              alt="Funding"
               className="rounded-3xl shadow-2xl"
             />
 
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center">
-                  <Star className="text-white" />
+                <div className="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center">
+                  <TrendingUp className="text-white" />
                 </div>
                 <div>
-                  <p className="text-3xl font-bold">500+</p>
-                  <p className="text-sm text-gray-600">Businesses helped</p>
+                  <p className="text-3xl font-bold">₦42.7M </p>
+                  <p className="text-sm text-gray-600">
+                    in funding and Value deployed.
+                  </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= VALUE PROP ================= */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Funding that comes with structure
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+              <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+                <DollarSign className="text-white w-8 h-8" />
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4">
+                Seed capital + growth support
+              </h3>
+
+              <p className="text-gray-700 text-lg mb-4">
+                Get access to seed funding designed to move your business
+                forward—paired with the right tools and expert guidance to help
+                you scale sustainably.
+              </p>
+
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>Seed capital to kickstart or accelerate growth</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>You lead the equity conversation—on your terms</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>
+                    Access industry tools & experts to support execution
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                <Shield className="text-white w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Compliance built in</h3>
+              <p className="text-gray-700 text-lg mb-4">
+                We identify every license, permit, and regulatory requirement
+                your business needs before you scale.
+              </p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>Complete regulatory checklist</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>Guided application support</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0 w-5 h-5" />
+                  <span>Ongoing compliance monitoring</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -116,17 +191,22 @@ export default function Home() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Why Craddule exists</h2>
               <p className="text-lg text-gray-700 mb-4">
-                Many founders fail not because their ideas are bad, but because
-                they miss critical regulatory requirements.
+                Too many great businesses fail because they either can't access
+                capital or miss critical compliance requirements.
               </p>
-              <p className="text-lg text-gray-700">
-                Craddule removes that uncertainty.
+              <p className="text-lg text-gray-700 mb-4">
+                We believe you shouldn't have to choose between funding and
+                doing things right.
+              </p>
+              <p className="text-lg font-semibold text-green-700">
+                Craddule gives you both—the capital to grow and the structure to
+                stay compliant.
               </p>
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop"
-                alt="Business planning"
+                src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&h=600&fit=crop"
+                alt="Business growth"
                 className="rounded-2xl shadow-xl"
               />
             </div>
@@ -139,60 +219,85 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16">How it works</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="mb-6 relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=300&fit=crop"
-                  alt="Evaluate"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop"
+                  alt="AI Business Review"
                   className="rounded-xl mx-auto shadow-lg w-full"
                 />
-                <div className="absolute inset-0 bg-blue-600/10 rounded-xl group-hover:bg-blue-600/20 transition" />
+                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
               </div>
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                 1
               </div>
-              <h3 className="text-xl font-semibold mb-3">Evaluate your idea</h3>
-              <p className="text-gray-600">
-                We analyze your business and industry context.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-6 relative group">
-                <img
-                  src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop"
-                  alt="Identify"
-                  className="rounded-xl mx-auto shadow-lg w-full"
-                />
-                <div className="absolute inset-0 bg-blue-600/10 rounded-xl group-hover:bg-blue-600/20 transition" />
-              </div>
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                2
-              </div>
               <h3 className="text-xl font-semibold mb-3">
-                Identify requirements
+                AI-powered business review
               </h3>
               <p className="text-gray-600">
-                Every approval, license, and certificate you need.
+                Our AI engine analyzes your idea and helps develop your business
+                summary, financial projections, and market strategy.
               </p>
             </div>
 
             <div className="text-center">
               <div className="mb-6 relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop"
-                  alt="Secure"
+                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop"
+                  alt="Apply"
                   className="rounded-xl mx-auto shadow-lg w-full"
                 />
-                <div className="absolute inset-0 bg-blue-600/10 rounded-xl group-hover:bg-blue-600/20 transition" />
+                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
               </div>
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Apply for funding</h3>
+              <p className="text-gray-600">
+                Tell us about your business, revenue, and growth plans. Takes 10
+                minutes.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-6 relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop"
+                  alt="Review"
+                  className="rounded-xl mx-auto shadow-lg w-full"
+                />
+                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
+              </div>
+              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                 3
               </div>
-              <h3 className="text-xl font-semibold mb-3">Secure compliance</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                Get your offer + compliance roadmap
+              </h3>
               <p className="text-gray-600">
-                Guided support to get everything right.
+                Receive a funding offer and a complete checklist of regulatory
+                requirements.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-6 relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=300&fit=crop"
+                  alt="Scale"
+                  className="rounded-xl mx-auto shadow-lg w-full"
+                />
+                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
+              </div>
+              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                4
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Scale with confidence
+              </h3>
+              <p className="text-gray-600">
+                Use the capital to grow while we guide you through compliance.
               </p>
             </div>
           </div>
@@ -213,21 +318,25 @@ export default function Home() {
 
             <div>
               <h2 className="text-4xl font-bold mb-8">
-                Our compliance principles
+                Our funding principles
               </h2>
 
               <div className="space-y-4">
                 <div className="bg-white p-5 rounded-xl flex gap-4 shadow-sm">
-                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">No shortcuts or loopholes</p>
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">
+                    Founder-friendly terms, no hidden fees
+                  </p>
                 </div>
                 <div className="bg-white p-5 rounded-xl flex gap-4 shadow-sm">
-                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">Structure and clarity first</p>
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Compliance is non-negotiable</p>
                 </div>
                 <div className="bg-white p-5 rounded-xl flex gap-4 shadow-sm">
-                  <CheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">Long-term compliance focus</p>
+                  <CheckCircle className="text-green-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">
+                    Long-term partnership over quick wins
+                  </p>
                 </div>
               </div>
             </div>
@@ -239,10 +348,10 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-4">
-            Trusted by growing businesses
+            Trusted by founders building the future
           </h2>
           <p className="text-center text-gray-600 mb-12">
-            Join hundreds of founders who got clarity on their compliance needs
+            Join hundreds of businesses funded and kept compliant by Craddule
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -267,28 +376,39 @@ export default function Home() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=600&fit=crop"
-            alt="Team"
+            src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1920&h=600&fit=crop"
+            alt="Success"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-blue-600/95" />
+          <div className="absolute inset-0 bg-green-600/95" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Know what your business needs — before you scale
+            Get the capital, leverage business experts, and obtain the
+            compliance your business needs
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Get your free regulatory checklist in minutes.
+          <p className="text-xl text-green-100 mb-10">
+            Register today start your businesses’ regulatory compliance, and
+            apply for potential funding offers.
           </p>
 
-          <button className="bg-white text-blue-600 px-10 py-4 rounded-xl font-semibold flex items-center gap-3 mx-auto hover:scale-105 transition shadow-2xl">
-            Get started free
+          <button
+            onClick={() =>
+              window.open(
+                "https://console.app.craddule.com",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+            className="bg-white text-green-600 px-10 py-4 rounded-xl font-semibold flex items-center gap-3 mx-auto hover:scale-105 transition shadow-2xl"
+          >
+            Register now
             <ArrowRight />
           </button>
 
-          <p className="mt-6 text-blue-200 text-sm">
-            No credit card required • Takes 5 minutes
+          <p className="mt-6 text-green-200 text-sm">
+            No upfront fees • Quick decisions • Keep your equity
           </p>
         </div>
       </section>
