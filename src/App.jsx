@@ -5,6 +5,9 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Features from "./pages/features";
 import Pricing from "./pages/pricing";
+import TermsAndConditions from "./pages/terms";
+import PrivacyPolicy from "./privacy";
+import UserTickets from "./pages/user tickets";
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
         </Route>
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/tickets/:ticketRef" element={<UserTickets />} />
       </Routes>
     </BrowserRouter>
   );

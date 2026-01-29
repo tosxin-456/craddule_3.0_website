@@ -54,7 +54,7 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* <div className="space-y-3">
+            <div className="space-y-3">
               <p className="font-semibold text-blue-900 mb-4">Legal</p>
 
               <p
@@ -71,13 +71,13 @@ export default function Footer() {
                 Terms of Service
               </p>
 
-              <p
+              {/* <p
                 onClick={() => goTo("/cookies")}
                 className="block text-gray-600 hover:text-blue-600 transition-colors cursor-pointer"
               >
                 Cookie Policy
-              </p>
-            </div> */}
+              </p> */}
+            </div>
             {/* 
             <div className="space-y-3">
               <p className="font-semibold text-blue-900 mb-4">Support</p>

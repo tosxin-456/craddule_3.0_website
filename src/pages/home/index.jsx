@@ -8,34 +8,35 @@ import {
   TrendingUp,
   Award
 } from "lucide-react";
+import BusinessOnboarding from "../../components/abbybasic";
 
 export default function Home() {
-const companies = [
-  {
-    name: "Stretford Professional Services",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
-  },
-  {
-    name: "Oui Advisory Capital",
-    logo: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=80&fit=crop&auto=format"
-  },
-  {
-    name: "Gigawatt Energy Limited",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
-  },
-  {
-    name: "Klump Technologies",
-    logo: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=200&h=80&fit=crop&auto=format"
-  },
-  {
-    name: "Esca Technologies",
-    logo: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=200&h=80&fit=crop&auto=format"
-  },
-  {
-    name: "Probitas Partners LLP",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
-  }
-];
+  const companies = [
+    {
+      name: "Stretford Professional Services",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Oui Advisory Capital",
+      logo: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Gigawatt Energy Limited",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Klump Technologies",
+      logo: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Esca Technologies",
+      logo: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=200&h=80&fit=crop&auto=format"
+    },
+    {
+      name: "Probitas Partners LLP",
+      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=80&fit=crop&auto=format"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -303,6 +304,7 @@ const companies = [
           </div>
         </div>
       </section>
+      <BusinessOnboarding />
 
       {/* ================= PRINCIPLES ================= */}
       <section className="py-20 bg-gray-50">

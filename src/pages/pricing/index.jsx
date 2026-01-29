@@ -8,8 +8,10 @@ import {
   Gift,
   FileText,
   Users,
-  TrendingUp
+  TrendingUp,
+  Mail
 } from "lucide-react";
+import ContactTicket from "../../components/contact";
 
 export default function Pricing() {
   const benefits = [
@@ -19,13 +21,18 @@ export default function Pricing() {
     { icon: <Gift className="w-6 h-6" />, text: "Free initial consultation" }
   ];
 
-  const popularCertificates = [
-    "CAC",
-    "TIN",
-    "SCUML",
-    "FIRS",
-    "Business Permits"
-  ];
+const certificates = [
+  { name: "SCUML", price: "Free", highlight: true },
+  { name: "TIN (from FIRS)", price: "Free", highlight: true },
+  {
+    name: "CAC Registrations",
+    price: "Service fee: ₦10,000",
+    highlight: false
+  },
+  { name: "FIRS", price: "Contact us", highlight: false },
+  { name: "Business Permits", price: "Contact us", highlight: false }
+];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -155,41 +162,82 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Popular Certificates */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-10 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Some of the most popular include:
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-              {popularCertificates.map((cert, index) => (
+        {/* Pricing Cards */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certificates.map((cert, index) => (
+              <div
+                key={index}
+                className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border-2 ${
+                  cert.highlight
+                    ? "border-green-400 bg-gradient-to-br from-green-50 to-white"
+                    : "border-blue-100"
+                }`}
+              >
                 <div
-                  key={index}
-                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 border border-blue-100"
+                  className={`w-16 h-16 ${
+                    cert.highlight
+                      ? "bg-gradient-to-br from-green-500 to-green-600"
+                      : "bg-gradient-to-br from-blue-500 to-blue-600"
+                  } rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <CheckCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <p className="text-center font-bold text-gray-900 text-lg">
-                    {cert}
+                  {cert.highlight ? (
+                    <Gift className="w-8 h-8 text-white" />
+                  ) : (
+                    <FileText className="w-8 h-8 text-white" />
+                  )}
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 text-center mb-3">
+                  {cert.name}
+                </h3>
+
+                <div className="text-center mb-4">
+                  <p
+                    className={`text-3xl font-extrabold ${
+                      cert.highlight ? "text-green-600" : "text-blue-600"
+                    }`}
+                  >
+                    {cert.price}
                   </p>
                 </div>
-              ))}
-            </div>
 
-            <div className="text-center pt-6 border-t border-blue-200">
-              <p className="text-gray-700 text-lg">
-                For other specific asks, we are happy to help you process.{" "}
-                {/* <a
-                  href="mailto:support@craddule.com"
-                  className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1"
-                >
-                  Contact us
-                  <ArrowRight className="w-4 h-4" />
-                </a> */}
+                {cert.highlight && (
+                  <div className="bg-green-100 border border-green-300 rounded-lg p-3 text-center">
+                    <p className="text-sm font-semibold text-green-800">
+                      ✓ No cost to you
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-10 shadow-lg">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Need Other Permits or Certificates?
+              </h3>
+              <p className="text-lg text-gray-700 mb-6">
+                We're happy to help you process any permits or certificates not
+                listed here.
               </p>
             </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              {/* <a
+                href="mailto:feedback@craddule.com"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:shadow-xl transition-all font-semibold inline-flex items-center gap-3 transform hover:scale-105"
+              >
+                <Mail className="w-5 h-5" />
+                Contact us at feedback@craddule.com
+                <ArrowRight className="w-5 h-5" />
+              </a> */}
+            </div>
+            <ContactTicket />
           </div>
         </div>
       </section>
@@ -329,22 +377,7 @@ export default function Pricing() {
               Start Registration
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button
-              onClick={() =>
-                window.open(
-                  "https://console.app.craddule.com",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
-              }
-              className="border-2 border-white text-white px-10 py-4 rounded-lg hover:bg-white/10 transition text-lg font-semibold"
-            >
-              Book Free Consultation
-            </button>
           </div>
-          <p className="mt-8 text-blue-200 text-sm">
-            No credit card required • Free consultation • Money-back guarantee
-          </p>
         </div>
       </section>
     </div>
