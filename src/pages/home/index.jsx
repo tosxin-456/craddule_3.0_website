@@ -71,7 +71,7 @@ export default function Home() {
             <button
               onClick={() =>
                 window.open(
-                  "https://console.app.craddule.com",
+                  "https://app.craddule.com",
                   "_blank",
                   "noopener,noreferrer"
                 )
@@ -398,7 +398,7 @@ export default function Home() {
           <button
             onClick={() =>
               window.open(
-                "https://console.app.craddule.com",
+                "https://app.craddule.com",
                 "_blank",
                 "noopener,noreferrer"
               )

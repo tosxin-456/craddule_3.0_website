@@ -75,7 +75,7 @@ export default function Navbar() {
         <button
           onClick={() =>
             window.open(
-              "https://console.app.craddule.com",
+              "https://app.craddule.com",
               "_blank",
               "noopener,noreferrer"
             )
@@ -134,7 +134,7 @@ export default function Navbar() {
           <button
             onClick={() =>
               window.open(
-                "https://console.app.craddule.com",
+                "https://app.craddule.com",
                 "_blank",
                 "noopener,noreferrer"
               )
