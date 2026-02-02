@@ -1,4 +1,3 @@
-// App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/home";
@@ -8,10 +7,12 @@ import Pricing from "./pages/pricing";
 import TermsAndConditions from "./pages/terms";
 import PrivacyPolicy from "./privacy";
 import UserTickets from "./pages/user tickets";
+import ScrollToTop from "./components/ScrollToTop"; // import it
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* This ensures every route change scrolls to top */}
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

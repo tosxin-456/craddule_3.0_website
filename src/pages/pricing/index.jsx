@@ -12,8 +12,19 @@ import {
   Mail
 } from "lucide-react";
 import ContactTicket from "../../components/contact";
+import { useState } from "react";
+import { API_BASE_URL } from "../../../config/apiConfig";
 
 export default function Pricing() {
+  const [showModal, setShowModal] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
+
   const benefits = [
     { icon: <Shield className="w-6 h-6" />, text: "Official government rates" },
     { icon: <Clock className="w-6 h-6" />, text: "Guaranteed timelines" },
@@ -21,18 +32,47 @@ export default function Pricing() {
     { icon: <Gift className="w-6 h-6" />, text: "Free initial consultation" }
   ];
 
-const certificates = [
-  { name: "SCUML", price: "Free", highlight: true },
-  { name: "TIN (from FIRS)", price: "Free", highlight: true },
-  {
-    name: "CAC Registrations",
-    price: "Service fee: ₦10,000",
-    highlight: false
-  },
-  { name: "FIRS", price: "Contact us", highlight: false },
-  { name: "Business Permits", price: "Contact us", highlight: false }
-];
+  const certificates = [
+    { name: "SCUML", price: "Free", highlight: true },
+    { name: "TIN (from FIRS)", price: "Free", highlight: true },
+    {
+      name: "CAC Registrations",
+      price: "Service fee: starting from ₦10,000",
+      highlight: false
+    },
+    { name: "FIRS", price: "Contact us", highlight: false },
+    { name: "Business Permits", price: "Contact us", highlight: false }
+  ];
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/waitlist`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, email })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage("🎉 Successfully added to the waitlist!");
+        setFullName("");
+        setEmail("");
+        setShowModal(false)
+      } else {
+        setMessage(data.message || "Something went wrong");
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage("Server error. Try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -325,19 +365,71 @@ const certificates = [
                 </div>
 
                 <button
-                  onClick={() =>
-                    window.open(
-                      "https://app.craddule.com",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
+                  onClick={openModal}
                   className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:shadow-lg transition font-semibold inline-flex items-center justify-center gap-2 w-fit"
                 >
                   Join Waitlist
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
+              {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                  <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+                    {/* Close Button */}
+                    <button
+                      onClick={closeModal}
+                      className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                    >
+                      ✕
+                    </button>
+
+                    <h2 className="text-2xl font-bold mb-4 text-gray-900">
+                      Join Our Waitlist
+                    </h2>
+                    <p className="text-gray-700 mb-6">
+                      Enter your details to secure a spot and get notified when
+                      we launch.
+                    </p>
+
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col gap-4"
+                    >
+                      <input
+                        type="text"
+                        placeholder="Full Name"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        required
+                        className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold flex items-center justify-center gap-2"
+                      >
+                        {loading ? "Submitting..." : "Submit"}
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </form>
+
+                    {message && (
+                      <p className="mt-4 text-center text-green-600 font-medium">
+                        {message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* Image Side */}
               <div className="relative h-full min-h-[400px] md:min-h-0">
