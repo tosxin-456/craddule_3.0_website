@@ -132,7 +132,7 @@ export default function ContactTicket() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full">
+      <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 md:max-w-2xl w-full">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Contact Us</h1>
           <p className="text-gray-600">
@@ -163,7 +163,7 @@ export default function ContactTicket() {
                 className={`block w-full pl-10 pr-3 py-2 border ${
                   errors.name ? "border-red-500" : "border-gray-300"
                 } rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all`}
-                placeholder="John Doe"
+                placeholder="Mary Janet"
               />
             </div>
             {errors.name && (
@@ -195,7 +195,7 @@ export default function ContactTicket() {
                 className={`block w-full pl-10 pr-3 py-2 border ${
                   errors.email ? "border-red-500" : "border-gray-300"
                 } rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all`}
-                placeholder="john@example.com"
+                placeholder="mary@example.com"
               />
             </div>
             {errors.email && (

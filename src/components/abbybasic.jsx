@@ -248,7 +248,7 @@ export default function BusinessOnboarding() {
               {[1, 2, 3, 4].map((num) => (
                 <div key={num} className="flex items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all ${
                       step >= num
                         ? "bg-indigo-600 text-white"
                         : "bg-gray-200 text-gray-500"
@@ -258,7 +258,7 @@ export default function BusinessOnboarding() {
                   </div>
                   {num < 4 && (
                     <div
-                      className={`h-1 w-20 mx-2 transition-all ${
+                      className={`h-1 w-8 sm:w-20 mx-1 sm:mx-2 transition-all ${
                         step > num ? "bg-indigo-600" : "bg-gray-200"
                       }`}
                     ></div>
@@ -266,9 +266,9 @@ export default function BusinessOnboarding() {
                 </div>
               ))}
             </div>
-            <div className="flex justify-between text-xs text-gray-600 mt-2 px-4">
+            <div className="flex justify-between text-xs text-gray-600 mt-2 px-2 sm:px-4">
               {stepLabels.map((label, index) => (
-                <span key={index} className="text-center w-20">
+                <span key={index} className="text-center w-16 sm:w-20 truncate">
                   {label}
                 </span>
               ))}
@@ -467,7 +467,8 @@ export default function BusinessOnboarding() {
                 <span className="font-semibold text-indigo-600">
                   {getSectorDisplayName()}
                 </span>{" "}
-                business
+                business{" "}
+                <b className="font-bold"> that Craddule can help you get.</b>
               </p>
             </div>
 
@@ -559,7 +560,7 @@ export default function BusinessOnboarding() {
                   className={`block w-full pl-10 pr-3 py-3 border ${
                     errors.fullName ? "border-red-500" : "border-gray-300"
                   } rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all`}
-                  placeholder="John Doe"
+                  placeholder="Mary Janet"
                 />
               </div>
               {errors.fullName && (
@@ -582,7 +583,7 @@ export default function BusinessOnboarding() {
                   className={`block w-full pl-10 pr-3 py-3 border ${
                     errors.email ? "border-red-500" : "border-gray-300"
                   } rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all`}
-                  placeholder="john@example.com"
+                  placeholder="mary@example.com"
                 />
               </div>
               {errors.email && (

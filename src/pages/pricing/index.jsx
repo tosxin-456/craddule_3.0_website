@@ -256,7 +256,7 @@ export default function Pricing() {
 
         {/* Contact CTA */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl p-10 shadow-lg">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-3xl md:p-10 p-5 shadow-lg">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Need Other Permits or Certificates?
