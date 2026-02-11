@@ -13,3 +13,7 @@
     font-family: var(--font-mont);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -238,7 +238,9 @@ export default function BusinessOnboarding() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-3xl w-full">
         <div className="m-auto w-fit    ">
-          <h1 className="m-auto text-2xl font-bold ">STRATEGY TOOL</h1>
+          <h1 className="m-auto text-2xl font-bold ">
+            Free Compliance Checklist
+          </h1>
         </div>
 
         {/* Progress Indicator - Show for steps 1-4 */}

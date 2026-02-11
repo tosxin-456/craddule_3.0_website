@@ -9,8 +9,21 @@ import {
   Award
 } from "lucide-react";
 import BusinessOnboarding from "../../components/abbybasic";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.hash === "#checklist") {
+      // slight delay to ensure DOM is painted
+      setTimeout(() => {
+        const el = document.getElementById("checklist");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
+
   const companies = [
     {
       name: "Stretford Professional Services",
@@ -85,7 +98,7 @@ export default function Home() {
             <div className="flex gap-8 mt-8 text-green-100">
               <span className="flex items-center gap-2">
                 <CheckCircle className="text-yellow-400" />
-                Capital + compliance
+                Capital + Compliance
               </span>
             </div>
           </div>
@@ -221,6 +234,30 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-16">How it works</h2>
 
           <div className="grid md:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div className="mb-6 relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop"
+                  alt="Regulatory & Compliance Support"
+                  className="rounded-xl mx-auto shadow-lg w-full"
+                />
+                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
+              </div>
+              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Regulatory & compliance roadmap
+              </h3>
+              <p className="text-gray-600">
+                We assess your business model and map out all required licenses,
+                registrations, and regulatory obligations. You receive a clear,
+                step-by-step compliance roadmap tailored to your industry.
+              </p>
+            </div>
+
+            {/* Step 2 */}
             <div className="text-center">
               <div className="mb-6 relative group">
                 <img
@@ -231,41 +268,24 @@ export default function Home() {
                 <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
               </div>
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                1
+                2
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 AI-powered business review
               </h3>
               <p className="text-gray-600">
-                Our AI engine analyzes your idea and helps develop your business
-                summary, financial projections, and market strategy.
+                Our AI engine analyzes your idea, strengthens your business
+                summary, builds financial projections, and refines your market
+                strategy — ensuring you are investor-ready.
               </p>
             </div>
 
+            {/* Step 3 */}
             <div className="text-center">
               <div className="mb-6 relative group">
                 <img
                   src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop"
-                  alt="Apply"
-                  className="rounded-xl mx-auto shadow-lg w-full"
-                />
-                <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
-              </div>
-              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Apply for funding</h3>
-              <p className="text-gray-600">
-                Tell us about your business, revenue, and growth plans. Takes 10
-                minutes.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-6 relative group">
-                <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop"
-                  alt="Review"
+                  alt="Funding Process"
                   className="rounded-xl mx-auto shadow-lg w-full"
                 />
                 <div className="absolute inset-0 bg-green-600/10 rounded-xl group-hover:bg-green-600/20 transition" />
@@ -274,14 +294,17 @@ export default function Home() {
                 3
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                Get your offer + compliance roadmap
+                Structured funding offer
               </h3>
               <p className="text-gray-600">
-                Receive a funding offer and a complete checklist of regulatory
-                requirements.
+                Once your compliance and financials are validated, we present a
+                tailored funding offer based on your revenue, projections, and
+                risk profile. Our process is transparent, milestone-based, and
+                designed to align capital with sustainable growth.
               </p>
             </div>
 
+            {/* Step 4 */}
             <div className="text-center">
               <div className="mb-6 relative group">
                 <img
@@ -298,13 +321,17 @@ export default function Home() {
                 Scale with confidence
               </h3>
               <p className="text-gray-600">
-                Use the capital to grow while we guide you through compliance.
+                Deploy capital while we continue guiding you through regulatory
+                compliance, reporting requirements, and strategic growth
+                milestones.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <BusinessOnboarding />
+      <div id="checklist">
+        <BusinessOnboarding />
+      </div>
 
       {/* ================= PRINCIPLES ================= */}
       <section className="py-20 bg-gray-50">
