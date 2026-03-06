@@ -61,8 +61,8 @@ export default function Navbar() {
                   isActive
                     ? "text-blue-600"
                     : isScrolled
-                    ? "text-gray-600 hover:text-blue-600"
-                    : "text-white hover:text-blue-300"
+                      ? "text-gray-600 hover:text-blue-600"
+                      : "text-white hover:text-blue-300"
                 }`
               }
             >
@@ -75,7 +75,8 @@ export default function Navbar() {
         <button
           onClick={() =>
             window.open(
-              "https://app.craddule.com",
+              // "https://app.craddule.com",
+              "https://console.app.craddule.com",
               "_blank",
               "noopener,noreferrer"
             )
@@ -134,7 +135,8 @@ export default function Navbar() {
           <button
             onClick={() =>
               window.open(
-                "https://app.craddule.com",
+                // "https://app.craddule.com",
+                "https://console.app.craddule.com",
                 "_blank",
                 "noopener,noreferrer"
               )

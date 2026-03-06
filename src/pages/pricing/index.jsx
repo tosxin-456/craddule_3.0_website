@@ -459,7 +459,8 @@ export default function Pricing() {
             <button
               onClick={() =>
                 window.open(
-                  "https://app.craddule.com",
+                  // "https://app.craddule.com",
+                  "https://console.app.craddule.com",
                   "_blank",
                   "noopener,noreferrer"
                 )
